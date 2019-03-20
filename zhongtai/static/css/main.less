@@ -1,0 +1,48 @@
+#main{
+  padding: 15px;
+  box-sizing: border-box;
+  .main-center{
+    display: flex;
+    .left{
+      width: 100%;
+      margin-right: 351px;
+      .message1{
+        height: 200px;
+        //width: 100%;
+        display: flex;
+        text-align: center;
+        &>div:first-child{
+          width: 60.7%;
+          background-color: #fff;
+          margin-right: 15px;
+          box-shadow: 0 2px 4px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
+        }
+        &>div:last-child{
+          width: 39.3%;
+          background-color: #fff;
+          box-shadow: 0 2px 4px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
+
+        }
+      }
+      .message2{
+        height: 150px;
+        margin-top: 15px;
+        background-color: #fff;
+        text-align: center
+      }
+    }
+    .right{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 336px;
+      .advantage1{
+        height: 200px;
+        border: none;
+        .el-tabs__item{
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}

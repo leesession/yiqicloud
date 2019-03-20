@@ -1,0 +1,31 @@
+#center{
+  height: 100%;
+  &>.title{
+    span{
+      display: inline-block;
+    }
+    span:first-child{
+      width: 200px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background-color: #fff;
+      border-bottom: 1px solid #1E2226;
+    }
+    span:last-child{
+      border-left: 2px solid #1E2226;
+      padding-left: 10px;
+      margin-left: 10px;
+    }
+  }
+  &>.el-tabs--left, &>.el-tabs--right{
+    position: absolute;
+    top: 41px;
+    bottom: 0;
+    left: 0;
+  }
+  .el-tabs--left .el-tabs__header.is-left{
+    width: 200px;
+    background-color: #fff;
+  }
+}

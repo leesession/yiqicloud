@@ -1,0 +1,120 @@
+@color :#e4393c;
+
+
+#index{
+  .nav{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: #252a2f;
+    color: #fff;
+    font-size: 15px;
+    z-index: 99;
+
+    .nav-left{
+      height: 50px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      padding-left: 20px;
+      i{
+        margin-right: 20px;
+        font-size: 25px;
+        color: #909399;
+      }
+    }
+    .nav-center{
+      height: 50px;
+      line-height: 50px;
+    }
+    .nav-right{
+      height: 50px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .el-badge__content.is-fixed{
+        top: 15px;
+        right: 15px;
+        padding: 2px 4px;
+        border-radius: 6px;
+        height: auto;
+        line-height: 1;
+        border: none;
+        background-color: #f54743;
+      }
+      span{
+        display: inline-block;
+        padding: 0 12px;
+        height: 100%;
+        line-height: 50px;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      span:hover{
+        background-color:#1E2226 ;
+      }
+      .el-dropdown{
+        height: 100%;
+        img{
+          position: relative;
+          top: 9px;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          vertical-align: center;
+          margin-right: 10px;
+          margin-left: 8px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .center{
+    position: fixed;
+    bottom:0;
+    top:50px;
+    overflow: hidden;
+    width: 100%;
+    .slide{
+      height: 100%;
+      overflow-y: scroll;
+      .el-menu-vertical-demo{
+        height: 100%;
+        z-index: 99;
+        position: relative;
+      }
+      .menu-switch{
+        height: 56px;
+        line-height: 56px;
+        padding: 0 20px;
+        border-bottom: 1px solid #000;
+        cursor: pointer;
+
+        i{
+          width: 24px;color: #909399;
+          margin-left: 5px;
+        }
+        span{
+          color: #fff;
+          font-size: 14px;
+        }
+      }
+      .menu-switch:hover{
+        background-color: rgb(30,34,38);
+      }
+    }
+    .main{
+      position: absolute;
+      top: 0;
+      left: 64px;
+      right: 0;
+      //width: calc(100% - 64px);
+      height: 100%;
+      overflow-y: scroll;
+      background-color: #eaedf1;
+    }
+  }
+
+}
