@@ -23,7 +23,8 @@ export default {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-family: "Microsoft YaHei";
+    /*font-family: "Microsoft YaHei";*/
+    font-family:Adobe Heiti Std R;
   }
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
