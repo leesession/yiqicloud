@@ -27,7 +27,8 @@
           <div class="things">
             <div class="title">待办事项</div>
             <div class="process">
-              <el-progress type="circle" :percentage="item.percent" status="text" v-for="item in percents">
+              <!--width="100"-->
+              <el-progress type="circle" :percentage="item.percent" status="text" v-for="item in percents" width="118">
                 <div>
                   <div class="percent">{{item.percent}}</div>
                   <div class="name">{{item.name}}</div>
@@ -121,7 +122,7 @@
       data(){
           return{
             activeName:'first',
-            signArray:['UED设计','大型项目经验','大型项目经验','Sketch'],
+            signArray:['UED设计','大型项目经验','Sketch','大型项目经验','Sketch',],
             menuArray:[
               {class:'icon-kucun',name:'设备上云'},{class:'icon-invite',name:'招投标公示'},{class:'icon-copy',name:'共享市场'},{class:'icon-copy',name:'信用曝光'}
             ],

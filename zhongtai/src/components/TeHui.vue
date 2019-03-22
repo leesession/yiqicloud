@@ -33,6 +33,9 @@
     color: #7B7B7B;
     margin-top: 10px;
     margin-bottom: 25px;
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
   }
   .tehui-link{
     button{
