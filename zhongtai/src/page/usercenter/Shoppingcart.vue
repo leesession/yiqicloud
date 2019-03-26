@@ -60,14 +60,12 @@
         name: "Shoppingcart",
       computed:{
         sumAmount(){
-          return this.tableData3.map(
-            row=>row.goods_number).reduce(
-            (acc, cur) => (parseFloat(cur) + acc), 0)
+          return this.multipleSelection.map(row=>row.goods_number)
+            .reduce((acc, cur) => (parseFloat(cur) + acc), 0)
         },
         sumMoney(){
-          return this.tableData3.map(
-            row=>row.goods_number*row.price).reduce(
-            (acc, cur) => (parseFloat(cur) + acc), 0)
+          return this.multipleSelection.map(row=>row.goods_number*row.price)
+            .reduce((acc, cur) => (parseFloat(cur) + acc), 0)
         }
       },
       data(){

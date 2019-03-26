@@ -55,7 +55,7 @@
                 </div>
                 <ul>
                   <li v-for="(item,index) in user_list" :key="index">
-                    <i :class="item.src"></i> <span>{{item.name}}</span>
+                    <i :class="'iconfont '+item.src"></i> <span>{{item.name}}</span>
                   </li>
                 </ul>
                 <div class="logout">
@@ -70,7 +70,7 @@
       <div class="center">
         <!--左侧边栏-->
         <div class="slide">
-
+          <!--:default-active="activeIndex"-->
           <el-menu default-active="1-4-1" class="el-menu-vertical-demo "
                    @open="handleOpen" @close="handleClose" :collapse="isCollapse"
                    @mouseenter.native="isCollapse=false" @mouseleave.native="showBord?isCollapse:isCollapse=true"
@@ -82,17 +82,9 @@
               <!--<i class="el-icon-edit"></i>-->
               <!--<span v-show="span">产品与服务</span>-->
             <!--</div>-->
-            <el-menu-item index="1">
-              <i class="icon-yun slide-icon"></i>
-              <span slot="title">益企云</span>
-            </el-menu-item>
-            <el-menu-item index="2">
-              <i class="icon-communicate slide-icon"></i>
-              <span slot="title">交流沟通</span>
-            </el-menu-item>
-            <el-menu-item index="3" >
-              <i class="icon-store slide-icon"></i>
-              <span slot="title">存储</span>
+            <el-menu-item :index="index1+1+''" v-for="(item,index1) in slide_nav">
+              <i :class="'iconfont '+item.src"></i>
+              <span slot="title">{{item.name}}</span>
             </el-menu-item>
           </el-menu>
         </div>
@@ -112,13 +104,14 @@
 <script>
   import allmenu from '../../components/Allmenu'
   import '../../../static/css/index.less';
-  import {mapState} from 'vuex'
+  import {mapState , mapMutations} from 'vuex'
 
     export default {
         name: "Index",
       computed:{
         ...mapState({
-          img:'img'
+          img:'img',
+          activeIndex:'activeIndex',
         })
       },
       components:{
@@ -126,11 +119,15 @@
       },
       data(){
           return{
+
             user_list:[
-              {src:'iconfont yiqi-iconicon-test',name:'余额'},{src:'iconfont yiqi-iconintegral',name:'积分'},
-              {src:'iconfont yiqi-iconxiaofeijilu',name:'消费记录'},{src:'iconfont yiqi-iconxufeijigoumai',name:'续费'},
-              {src:'iconfont yiqi-iconxiaoxi',name:'未读消息'},{src:'iconfont yiqi-icondingdan2',name:'订单'},
-              {src:'iconfont yiqi-iconshezhi',name:'设置'}
+              {src:'yiqi-iconicon-test',name:'余额'},{src:'yiqi-iconintegral',name:'积分'},
+              {src:'yiqi-iconxiaofeijilu',name:'消费记录'},{src:'yiqi-iconxufeijigoumai',name:'续费'},
+              {src:'yiqi-iconxiaoxi',name:'未读消息'},{src:'yiqi-icondingdan2',name:'订单'},
+              {src:'yiqi-iconshezhi',name:'设置'}
+            ],
+            slide_nav:[
+              {src:'yiqi-iconyun',name:'云'},{src:'yiqi-iconyigoutong',name:'沟通'},{src:'yiqi-iconcunchupitchon',name:'存储'},
             ],
             showBord:false,
             span:false,
@@ -159,6 +156,9 @@
           }
       },
       methods:{
+          ...mapMutations({
+
+          }),
           //主menu切换
         close(){
           this.showBord=false;
@@ -177,7 +177,19 @@
         },
         menuChange(mainMenu,detailMenu){
           console.log(mainMenu,detailMenu)
+        },
+        changeActiveIndex(){
+          this.$store.commit('changeActive','3')
         }
+      },
+      beforeRouteUpdate(to, from, next){
+          console.log(to.path,this.activeIndex)
+        this.changeActiveIndex()
+        next(vm => {
+          // if(to.path.indexOf('/index/')!==-1){
+          //   vm.activeIndex='2'
+          // }
+        })
       }
     }
 </script>

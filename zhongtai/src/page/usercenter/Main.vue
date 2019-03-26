@@ -11,7 +11,7 @@
             </div>
             <!--详情-->
             <div class="detail">
-              <img :src="img" alt="" >
+              <img :src="img" alt="" @click="$router.push({path:'/index/center',query:{index:'3'}})">
               <div class="intro">
                 <div class="top">早安，生活离奇，祝你拥有美好的一天。</div>
                 <div class="middle">交互设计师 | 蚂蚁金服 | 某某某事业群-某某平台部-某某技术部-UED</div>
@@ -28,7 +28,7 @@
             <div class="title">待办事项</div>
             <div class="process">
               <!--width="100"-->
-              <el-progress type="circle" :percentage="item.percent" status="text" v-for="item in percents" width="118">
+              <el-progress type="circle" :percentage="item.percent" status="text" v-for="item in percents" :width="115">
                 <div>
                   <div class="percent">{{item.percent}}</div>
                   <div class="name">{{item.name}}</div>
@@ -46,7 +46,7 @@
           <div class="title">最近打开的应用</div>
           <div class="last-views">
             <span class="menu-item" v-for="item in menuArray">
-              <i :class="'slide-icon '+item.class"></i>
+              <i :class="'iconfont '+item.class"></i>
               <span>{{item.name}}</span>
             </span>
           </div>
@@ -124,7 +124,7 @@
             activeName:'first',
             signArray:['UED设计','大型项目经验','Sketch','大型项目经验','Sketch',],
             menuArray:[
-              {class:'icon-kucun',name:'设备上云'},{class:'icon-invite',name:'招投标公示'},{class:'icon-copy',name:'共享市场'},{class:'icon-copy',name:'信用曝光'}
+              {class:'yiqi-iconyun',name:'设备上云'},{class:'yiqi-iconyigoutong',name:'招投标公示'},{class:'yiqi-iconxufeijigoumai',name:'共享市场'},{class:'yiqi-icondingdan2',name:'信用曝光'}
             ],
             percents:[
               {percent:10,name:'工单1'},{percent:40,name:'工单2'},{percent:50,name:'工单3'}
